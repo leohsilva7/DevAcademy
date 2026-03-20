@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang=pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro</title>
+</head>
+<body>
+<form id="register-form">
+    <div>
+        <label for="name-id">Nome: </label>
+        <input type="text" name="name" id="name-id" required>
+    </div>
+    <div>
+        <label for="email-id">Email: </label>
+        <input type="email" name="email" id="email-id" required>
+    </div>
+    <div>
+        <label for="password-id">Senha: </label>
+        <input type="password" name="password" id="password-id" required>
+    </div>
+    <div>
+        <label for="password-confirm-id">Confirmar Senha: </label>
+        <input type="password" name="password" id="password-confirm-id" required>
+    </div>
+    <div>
+        <label for="role-id">Cargo: </label>
+        <select name="" id="role-id" required>
+            <option value="Admin">Admin</option>
+            <option value="Professor">Professor</option>
+            <option value="User" selected>User</option>
+        </select>
+    </div>
+    <button type="submit" id="register-btn">Registrar</button>
+</form>
+<p>Já tem uma conta? <a href="./index.html">Clique Aqui!</a></p>
+<script defer src="js/register.js"></script>
+</body>
+</html>
