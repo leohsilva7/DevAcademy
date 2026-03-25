@@ -6,10 +6,14 @@ const confirmPasswordInput = document.getElementById('password-confirm-id');
 const roleSelect = document.getElementById('role-id');
 const registerBtn = document.getElementById('register-btn');
 const formRegister = document.getElementById('register-form');
+if (localStorage.getItem('token')){
+    window.location.href = './index.html';
+}
 async function register(event){
     event.preventDefault();
     try{
         registerBtn.disabled = true;
+        registerBtn.textContent = 'Carregando';
         if (passwordInput.value !== confirmPasswordInput.value){
             alert('As Senhas Não São Iguais!');
             return ;
@@ -37,6 +41,7 @@ async function register(event){
     }
     finally{
         registerBtn.disabled = false;
+        registerBtn.textContent = 'Registrar';
     }
 }
 formRegister.addEventListener('submit', async (event) => {

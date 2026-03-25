@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <main class="container">
     <div id="message-box"></div>
-    <form id="login-form" method="post">
-        <div>
-            <label for="email-id">Email: </label>
-            <input type="email" name="email" id="email-id" required>
-        </div>
-        <div>
-            <label for="password-id">Senha: </label>
-            <input type="password" name="password" id="password-id" required>
-        </div>
-        <button type="submit" id="login-btn">Logar</button>
-    </form>
-    <p>Ainda não criou uma conta? <a href="./register.html">Clique Aqui!</a></p>
+    <section id="login-section">
+        <h1>Login</h1>
+        <form id="login-form" method="post">
+            <div>
+                <label for="email-id">Email: </label>
+                <input type="email" name="email" id="email-id" required>
+            </div>
+            <div>
+                <label for="password-id">Senha: </label>
+                <input type="password" name="password" id="password-id" required>
+            </div>
+            <button type="submit" id="login-btn">Entrar</button>
+        </form>
+        <p>Ainda não criou uma conta? <a href="./register.html">Clique Aqui!</a></p>
+    </section>
+    <section id="dashboard-section" class="hidden">
+        <h2>Painel Protegido</h2>
+        <p>Olá, Você Logado!</p>
+        <button id="fetch-data-btn">Buscar dados</button>
+        <div id="api-data"></div>
+        <button id="logout-btn">Sair</button>
+    </section>
 </main>
-<script type="module" src="js/login.js"></script>
+<script defer type="module" src="js/login.js"></script>
 </body>
 </html>

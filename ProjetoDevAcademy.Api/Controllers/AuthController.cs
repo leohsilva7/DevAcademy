@@ -43,17 +43,12 @@ namespace ProjetoDevAcademy.Api.Controllers
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
 
-            var passwordValid = false;
-            if (user != null)
+            if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
             {
-                passwordValid = BCrypt.Net.BCrypt.Verify(dto.Password, user.Password);
+                return StatusCode(401, new { Message = "Email ou Senha Inválidos" });
             }
-            if (passwordValid)
-            {
-                var token = CriarToken(user);
-                return StatusCode(200, new { Token = token });
-            }
-            return StatusCode(401, new { Message = "Email ou Senha Inválidos" });
+            var token = CriarToken(user);
+            return StatusCode(200, new { Token = token });
         }
         private string CriarToken(User user)
         {
