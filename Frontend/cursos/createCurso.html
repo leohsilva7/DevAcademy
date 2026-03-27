@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Curso</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="message-box"></div>
+    <form method="post" id="create-curso-form">
+        <div>
+            <label for="title-id">Nome do Curso</label>
+            <input type="text" name="title" id="title-id" required>
+        </div>
+        <div>
+            <label for="description-id">Descrição do Curso</label>
+            <input type="text" name="description" id="description-id" required>
+        </div>
+        <div>
+            <label for="hours-id">Carga Hóraria do Curso</label>
+            <input type="text" name="hours" id="hours-id" required>
+        </div>
+        <button type="submit" id="submit-btn">Criar</button>
+    </form>
+    <script src="../js/curso.js" defer></script>
+</body>
+</html>
